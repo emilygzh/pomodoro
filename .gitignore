@@ -1,0 +1,29 @@
+# node
+node_modules/
+
+# electorn
+dist/
+out/
+release/
+build/
+
+# macOS sys
+.DS_Store
+
+# logs/envs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+
+
+# cache
+*.log
+.cache/
+*.tsbuildinfo
+
+# electron packager specific
+*.dmg
+*.exe
+*.app
+*.asar
