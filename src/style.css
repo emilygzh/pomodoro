@@ -1,0 +1,71 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    font-family: "Jersey 15", sans-serif; 
+    background-color: #FFCFB2;
+}
+
+.jersey-15-regular {
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+.header h1 {
+    font-size: 25px;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+#timer {
+    font-size: 45px;
+    margin: 15px 0;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 7px;
+}
+
+.buttons button {
+    font-family: "Jersey 15", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buttons button:hover {
+    background-color: #e0533b;
+}
+
+
+.center-image {
+    width: 165px;
+    height: auto;
+    margin: 10px 0;
+}
