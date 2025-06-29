@@ -1,2 +1,2 @@
 # pomodoro
-inspired by classic pomodoro timer
+wanted a cute desktop timer, thought it would be cool to add a heatmap calendar tracker
