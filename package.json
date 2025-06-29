@@ -2,7 +2,7 @@
   "name": "pomodoro",
   "version": "1.0.0",
   "description": "inspired by classic pomodoro timer",
-  "main": "main.js",
+  "main": "main.js", 
   "scripts": {
     "start": "electron ."
   },
