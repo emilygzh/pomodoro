@@ -1,25 +1,49 @@
-let timeRemaining = 1500 //25 minutes *60 seconds == seconds
+function showScreen(screenId) {
+    document.getElementById('home-screen').style.display = 'none';
+    document.getElementById('focus-screen').style.display = 'none';
+    document.getElementById('break-screen').style.display = 'none';
+    document.getElementById(screenId).style.display = 'flex';
+}
+
+function goToFocus() {
+    showScreen('focus-screen');
+    resetTimer();
+}
+
+function goToBreak() {
+    showScreen('break-screen');
+    resetBreak();
+}
+
+function goHome() {
+    showScreen('home-screen');
+    pauseTimer();
+    pauseBreakTimer();
+}
+
+
+let focusTime = 1500 //25*60 minutes in secs
+let timeRemaining = focusTime;
 let interval = null;
 
 function updateDisplay() {
-    const minutes = String(Math.floor(timeRemaining/60)).padStart(2, '0');
-    const seconds = String(timeRemaining%60).padStart(2, '0');
+    const minutes = String(Math.floor(timeRemaining / 60)).padStart(2, '0');
+    const seconds = String(timeRemaining % 60).padStart(2, '0');
     document.getElementById('timer').textContent = `${minutes}:${seconds}`;
-
 }
 
 function startTimer() {
     if (interval) return;
     interval = setInterval(() => {
-        if (timeRemaining<=0) {
+        if (timeRemaining <= 0) {
             clearInterval(interval);
             interval = null;
-            alert("Time's up!");
+            goToBreak(); 
             return;
         }
-        timeRemaining--;
-        updateDisplay();
-        }, 1000)
+    timeRemaining--;
+    updateDisplay();
+}, 1000);
 }
 
 function pauseTimer() {
@@ -30,13 +54,49 @@ function pauseTimer() {
 function resetTimer() {
     clearInterval(interval);
     interval = null;
-    timeRemaining = 1500 //25*60
+    timeRemaining = focusTime;
     updateDisplay();
 }
 
 
-updateDisplay()
+let breakTime = 300 //5*60 5 minutes in seconds
+let breakRemaining = breakTime;
+let breakInterval = null;
 
-window.startTimer = startTimer;
-window.pauseTimer = pauseTimer;
-window.resetTimer = resetTimer;
+function updateBreakDisplay() {
+    const minutes = String(Math.floor(breakRemaining / 60)).padStart(2, '0');
+    const seconds = String(breakRemaining % 60).padStart(2, '0');
+    document.getElementById('break-timer').textContent = `${minutes}:${seconds}`;
+}
+
+function startBreakTimer() {
+    if (breakInterval) return;
+    breakInterval = setInterval(() => {
+        if (breakRemaining <= 0) {
+            clearInterval(breakInterval);
+            breakInterval = null;
+            alert("Break's over!");
+            goToFocus(); 
+            return;
+        }
+    breakRemaining--;
+    updateBreakDisplay();
+}, 1000);
+}
+
+function pauseBreakTimer() {
+    clearInterval(breakInterval);
+    breakInterval = null;
+}
+
+function resetBreak() {
+    clearInterval(breakInterval);
+    breakInterval = null;
+    breakRemaining = breakTime;
+    updateBreakDisplay();
+}
+
+window.onload = () => {
+    updateDisplay();       // init focus
+    updateBreakDisplay();  //init break
+};

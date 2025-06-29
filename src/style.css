@@ -27,7 +27,8 @@ html, body {
 .header h1 {
     font-size: 25px;
     margin: 15px 0;
-    letter-spacing: 2px;
+    color: #004216;
+    letter-spacing: 2px
 }
 
 #timer {
@@ -35,6 +36,7 @@ html, body {
     margin: 15px 0;
     letter-spacing: 5px;
     text-align: center;
+    color: #004216
 }
 
 
@@ -53,7 +55,7 @@ html, body {
     padding: 6px 12px;
     border: none;
     background-color: #ff6347;
-    color: white;
+    color: #FFEADD;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -68,4 +70,18 @@ html, body {
     width: 165px;
     height: auto;
     margin: 10px 0;
+}
+
+.home-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;  
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.home-btn:hover {
+  transform: scale(1.1);
 }
