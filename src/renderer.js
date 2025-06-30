@@ -1,3 +1,6 @@
+const ding = new Audio('assets/bell.mp3');
+const click = new Audio('assets/button.mp3');
+
 function showScreen(screenId) {
     document.getElementById('home-screen').style.display = 'none';
     document.getElementById('focus-screen').style.display = 'none';
@@ -38,6 +41,7 @@ function startTimer() {
         if (timeRemaining <= 0) {
             clearInterval(interval);
             interval = null;
+            ding.play();
             goToBreak(); 
             return;
         }
@@ -75,8 +79,8 @@ function startBreakTimer() {
         if (breakRemaining <= 0) {
             clearInterval(breakInterval);
             breakInterval = null;
-            alert("Break's over!");
-            goToFocus(); 
+            ding.play();
+            alert("Time's up!");
             return;
         }
     breakRemaining--;
@@ -99,4 +103,11 @@ function resetBreak() {
 window.onload = () => {
     updateDisplay();       // init focus
     updateBreakDisplay();  //init break
+
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', () => {
+            click.currentTime = 0;
+            click.play();
+        })
+    })
 };
