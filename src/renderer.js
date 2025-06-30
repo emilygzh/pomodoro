@@ -7,7 +7,6 @@ function showScreen(screenId) {
     document.getElementById('break-screen').style.display = 'none';
     document.getElementById(screenId).style.display = 'flex';
 }
-
 function goToFocus() {
     showScreen('focus-screen');
     resetTimer();
