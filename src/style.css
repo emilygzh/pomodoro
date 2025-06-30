@@ -39,6 +39,22 @@ html, body {
     color: #004216
 }
 
+#home-screen h1 {
+    font-size: 30px;
+    margin: 15px 0;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #004216;
+}
+#break-timer {
+    font-size: 45px;
+    margin: 15px 0;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #004216;
+}
+
+
 
 
 .buttons {
@@ -62,7 +78,16 @@ html, body {
 }
 
 .buttons button:hover {
-    background-color: #e0533b;
+    font-family: "Jersey 15", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #ff6347;
+    color: #FFEADD;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 
@@ -85,3 +110,5 @@ html, body {
 .home-btn:hover {
     transform: scale(1.1);
 }
+
+
